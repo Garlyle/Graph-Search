@@ -18,4 +18,11 @@ public class Node {
   public void setPosition(Point position) {
     this.position = position;
   }
+
+  public double getDistance(Node other) {
+    double xSeparation = other.getPosition().x - position.x;
+    double ySeparation = other.getPosition().y - position.y;
+
+    return Math.sqrt(ySeparation * ySeparation + xSeparation * xSeparation);
+  }
 }

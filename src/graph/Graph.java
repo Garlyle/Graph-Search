@@ -79,4 +79,16 @@ public class Graph {
     return neighbours;
   }
 
+  public Node findClosestNode(Node target) {
+    double smallestDistance = Double.MAX_VALUE;
+    Node closest = null;
+
+    for (Node node : nodeList) {
+      if (node.getDistance(target) < smallestDistance) {
+        closest = node;
+        smallestDistance = node.getDistance(target);
+      }
+    }
+    return closest;
+  }
 }
