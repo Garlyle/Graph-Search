@@ -1,5 +1,6 @@
 package graph;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -79,14 +80,14 @@ public class Graph {
     return neighbours;
   }
 
-  public Node findClosestNode(Node target) {
+  public Node findClosestNode(Point target) {
     double smallestDistance = Double.MAX_VALUE;
     Node closest = null;
 
     for (Node node : nodeList) {
-      if (node.getDistance(target) < smallestDistance) {
+      if (target.distance(node.getPosition()) < smallestDistance) {
         closest = node;
-        smallestDistance = node.getDistance(target);
+        smallestDistance = target.distance(node.getPosition());
       }
     }
     return closest;
