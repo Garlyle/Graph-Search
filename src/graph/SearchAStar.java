@@ -1,4 +1,4 @@
-package sample.graph;
+package graph;
 
 public class SearchAStar extends SearchDijkstra {
   Heuristic heuristic;

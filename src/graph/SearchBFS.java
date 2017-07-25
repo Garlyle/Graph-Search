@@ -1,4 +1,4 @@
-package sample.graph;
+package graph;
 
 import java.util.LinkedList;
 

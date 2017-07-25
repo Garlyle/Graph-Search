@@ -1,4 +1,4 @@
-package sample.graph;
+package graph;
 
 public class Edge {
   private int fromNode;

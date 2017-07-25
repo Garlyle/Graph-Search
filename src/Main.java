@@ -1,6 +1,4 @@
-package sample;
-
-import sample.graph.*;
+import graph.*;
 
 import java.awt.*;
 

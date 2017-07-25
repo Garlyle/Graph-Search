@@ -1,4 +1,4 @@
-package sample.graph;
+package graph;
 
 public class HeuristicEuclid extends Heuristic {
   @Override
