@@ -1,5 +1,5 @@
 import graph.*;
-import sampling.Poisson;
+import sampling.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,18 +17,18 @@ public class Main extends JComponent{
     }
 
     public static void mainDraw(Graphics graphics){
-        Poisson sampling = new Poisson(800, 800, 5);
+        Sampling sampling = new Poisson(400, 400, 20);
 
         graphics.setColor(Color.black);
         List<Point> output = sampling.Calculate();
         for (Point p : sampling.Calculate()) {
-            graphics.fillOval(p.x, p.y, 2, 2);
+            graphics.fillOval(p.x, p.y, 10, 10);
         }
     }
 
     public static void main(String[] args) {
         JFrame jFrame = new JFrame("Center Box Function");
-        jFrame.setSize(new Dimension(800, 800));
+        jFrame.setSize(new Dimension(400, 400));
         jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         jFrame.add(new ImagePanel());
         jFrame.setLocationRelativeTo(null);
