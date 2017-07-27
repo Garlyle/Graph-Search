@@ -1,9 +1,41 @@
 import graph.*;
+import sampling.Poisson;
 
+import javax.swing.*;
 import java.awt.*;
+import java.util.List;
 
-public class Main {
+import static javax.swing.JFrame.EXIT_ON_CLOSE;
+
+public class Main extends JComponent{
+    static class ImagePanel extends JPanel{
+        @Override
+        protected void paintComponent(Graphics graphics) {
+            super.paintComponent(graphics);
+            mainDraw(graphics);
+        }
+    }
+
+    public static void mainDraw(Graphics graphics){
+        Poisson sampling = new Poisson(800, 800, 5);
+
+        graphics.setColor(Color.black);
+        List<Point> output = sampling.Calculate();
+        for (Point p : sampling.Calculate()) {
+            graphics.fillOval(p.x, p.y, 2, 2);
+        }
+    }
+
     public static void main(String[] args) {
+        JFrame jFrame = new JFrame("Center Box Function");
+        jFrame.setSize(new Dimension(800, 800));
+        jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        jFrame.add(new ImagePanel());
+        jFrame.setLocationRelativeTo(null);
+        jFrame.setVisible(true);
+    }
+
+  public static void graphTest() {
       Graph graph = new Graph();
       graph.addNode(new Node(graph.nextValidIndex(), new Point(4, 0)));
       graph.addNode(new Node(graph.nextValidIndex(), new Point(3, 1)));
